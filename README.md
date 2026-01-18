@@ -4,7 +4,7 @@
 
 以及支持查询隐藏包。
 
-如果你不了解如何打包vite项目，请[点此下载](https://aliya-chen.github.io/unicomvue/dist.zip)解压文件部署到服务器根目录即可
+如果你不了解如何打包vite项目，请[点此下载](https://raw.githubusercontent.com/AliYa-chen/unicomvue/gh-pages/dist.zip)解压文件部署到服务器根目录即可
 
 或者使用`Docker`部署
 
@@ -39,3 +39,30 @@ https://m.client.10010.com/servicebusiness/newOrdered/queryOrderRelationship
 
 速率查询
 https://m.client.10010.com/servicebusiness/query/fiveg/getbasicdata"
+```
+
+## ❓ 疑问解答
+
+### 问：我搭建了一个前端页面，能否添加到跨域白名单？
+
+**答：** 可以，但需要满足以下条件：
+
+- 你的页面已有一定的用户量或明确的使用场景  
+- 页面中需添加链接，指向本项目的开源仓库  
+- 不用于商业用途，不进行接口滥用或批量请求  
+
+满足以上条件后，请通过项目中提供的联系方式与我联系，视情况加入跨域白名单。
+
+---
+
+### 问：能否添加 xxx 功能？
+
+**答：**  
+欢迎提出合理的功能建议或优化想法。
+
+如有实际使用价值的需求，可通过以下方式联系我：
+
+- 提交 GitHub Issue  
+- 通过项目中提供的联系邮箱  
+
+我会根据时间精力与实现成本进行评估，但不保证一定实现。
