@@ -1,0 +1,63 @@
+/* 👇 核心修改：直接操作 :root (即 html)
+   Tailwind v4 自动生成了 --color-zinc-50 等变量，直接用 var() 调用即可
+   完全不需要 @apply，也就不会报错了
+*/
+:root {
+  background-color: var(--color-zinc-50);
+  color: var(--color-zinc-900);
+  /* 在这里定义全局过渡，这就不用在每个 div 上写 transition 了 */
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* 当 html 标签有 class="dark" 时 */
+:root.dark {
+  background-color: var(--color-zinc-900);
+  color: var(--color-zinc-100);
+}
+
+/* 其他样式保持不变 */
+body {
+  margin: 0;
+  padding: 0;
+  /* 移除 body 的背景设置，让它继承 :root */
+}
+
+.rainbow-bar {
+  background: repeating-linear-gradient(
+    90deg,
+    #ff4d4f 0%,
+    #ffa940 12.5%,
+    #ffd666 25%,
+    #95de64 37.5%,
+    #36cfc9 50%,
+    #40a9ff 62.5%,
+    #9254de 75%,
+    #ff4d4f 100%
+  );
+  background-size: 240px 100%;
+  animation: rb 1.8s linear infinite;
+}
+
+@keyframes rb {
+  from { background-position: 0 0; }
+  to { background-position: 240px 0; }
+}
+
+#app {
+  min-height: 100dvh;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media (max-width: 768px) {
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
+
+[data-flow-card="1"][data-collapsed="1"] .flow-more { display: none; }
+[data-flow-group="1"][data-collapsed="1"] .flow-group-more { display: none; }
+[data-flow-group="1"] .flow-group-more { margin-top: 1rem; }
+[data-flow-group="1"][data-collapsed="1"] .flow-group-grid > :nth-child(n + 2) { display: none; }
