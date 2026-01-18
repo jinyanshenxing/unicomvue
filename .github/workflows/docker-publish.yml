@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - main
-      - master
     # 当创建标签时触发
     tag:
       - 'v*'
@@ -43,7 +42,7 @@ jobs:
 
       # 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-main@v3
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
