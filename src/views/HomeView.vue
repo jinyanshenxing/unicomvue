@@ -196,7 +196,7 @@ import { computed, onMounted, onBeforeUnmount, ref,inject } from "vue";
 
 
 // ========= 配置 =========
-const MAIN_API = "https://network.nbcnm.cn";
+const MAIN_API = "https://networkapi.nbcnm.cn";
 const STORAGE_KEY = "ecs_token";
 const THEME_KEY = "theme"; 
 const LOGIN_API = MAIN_API + "/gettoken";
