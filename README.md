@@ -4,7 +4,7 @@
 
 以及支持查询隐藏包。
 
-如果你不了解如何打包vite项目，请[点此下载]( )解压文件部署到服务器根目录即可
+如果你不了解如何打包vite项目，请[点此下载](https://aliya-chen.github.io/unicomvue/dist.zip)解压文件部署到服务器根目录即可
 
 或者使用`Docker`部署
 
