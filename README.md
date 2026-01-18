@@ -9,12 +9,12 @@
 或者使用`Docker`部署
 
 ```bash
-docker run -d --rm -p 8080:80 netart/network-panel:latest
+docker run -d --rm -p 8080:80 bingoma/network-panel:latest
 ```
 
 或者使用腾讯云提供的一键部署
 
-[![Use EdgeOne Pages to deploy](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=)
+[![Use EdgeOne Pages to deploy](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https%3A%2F%2Fgithub.com%2FAliYa-chen%2Funicomvue)
 
 [Demo](https://network.nbcnm.cn/)
 
