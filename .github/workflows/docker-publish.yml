@@ -12,9 +12,6 @@ env:
   REGISTRY: docker.io
   IMAGE_NAME: network-panel
 
-permissions:
-  contents: write
-
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -23,32 +20,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 建议固定 Node 版本 + pnpm cache
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
 
-      - name: Install pnpm
+      - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 10
-          run_install: false
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build project
+      - name: Build (dist)
         run: pnpm run build
-
-      # 部署到 GitHub Pages（只在 main）
-      - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
