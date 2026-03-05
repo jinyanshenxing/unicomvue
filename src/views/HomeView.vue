@@ -113,7 +113,7 @@
     </div>
     
     <div class="fixed inset-0 z-50" v-show="loginModal">
-      <div class="absolute inset-0 bg-zinc-900/50 dark:bg-black/80" @click="hideLogin"></div>
+      <div class="absolute inset-0 bg-zinc-900/50 dark:bg-black/80"></div>
       <div class="relative mx-auto mt-24 w-[92vw] max-w-md">
         <div class="rounded-2xl border border-zinc-200 bg-white p-6 shadow-xl dark:border-zinc-800 dark:bg-zinc-900">
           <div class="flex items-start justify-between gap-3">
