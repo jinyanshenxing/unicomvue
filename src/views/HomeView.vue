@@ -166,7 +166,6 @@
             </template>
             
             <div class="rounded-xl border px-3 py-2 text-xs" v-show="loginMsg" :class="loginMsgKind === 'ok' ? 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950/50 dark:text-emerald-400' : 'border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-900 dark:bg-rose-950/50 dark:text-rose-400'">{{ loginMsg }}</div>
-            <div class="pt-1 text-[11px] leading-relaxed text-zinc-500 dark:text-zinc-500" v-if="loginMode==='sms'">验证码从 <span class="font-medium text-zinc-700 dark:text-zinc-300">联通APP</span> 登录界面获取</div>
             <div class="text-[11px] leading-relaxed text-zinc-500 dark:text-zinc-500">
               提示：点击登录即表示您同意本工具获取您的
               <span class="font-mono font-medium text-zinc-700 dark:text-zinc-300">ecs_token</span>，

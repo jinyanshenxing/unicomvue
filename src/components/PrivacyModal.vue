@@ -76,6 +76,11 @@
                                 <div class="space-y-2">
                                     <ApiItem title="登录" url="https://m.client.10010.com/mobileService/radomLogin.htm"
                                         note="返回常见为三段式：token_online#ecs_token#appid" />
+                                    <ApiItem title="认证"
+                                        url="https://loginxhm.10010.com/login-web/v1/chartCaptcha/validateTencentCaptcha"
+                                        note="滑块或点击认证" />
+                                    <ApiItem title="发短信" url="https://m.client.10010.com/mobileService/sendRadomNum.htm"
+                                        note="发送随机验证码" />
                                     <ApiItem title="已订业务"
                                         url="https://m.client.10010.com/servicebusiness/newOrdered/queryOrderRelationship" />
                                     <ApiItem title="5G 信息（余量/用量）"
