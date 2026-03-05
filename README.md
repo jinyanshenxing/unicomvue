@@ -16,7 +16,7 @@ docker run -d --rm -p 8080:80 bingoma/network-panel:latest
 
 [![Use EdgeOne Pages to deploy](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https%3A%2F%2Fgithub.com%2FAliYa-chen%2Funicomvue)
 
-[Demo](https://network.nbcnm.cn/)
+[Demo](https://net.2t.hk/)
 
 特性：
 
@@ -31,6 +31,14 @@ docker run -d --rm -p 8080:80 bingoma/network-panel:latest
 ```
 登录 
 https://m.client.10010.com/mobileService/radomLogin.htm
+
+```
+滑块或点击认证
+https://loginxhm.10010.com/login-web/v1/chartCaptcha/validateTencentCaptcha
+
+```
+发短信
+https://m.client.10010.com/mobileService/sendRadomNum.htm
 
 已订业务
 https://m.client.10010.com/servicebusiness/newOrdered/queryOrderRelationship
