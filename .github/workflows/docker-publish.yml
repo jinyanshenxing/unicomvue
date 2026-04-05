@@ -9,11 +9,15 @@ on:
   workflow_dispatch:
 
 env:
-  REGISTRY: docker.io
-  IMAGE_NAME: network-panel
+  REGISTRY: ghcr.io
+  # 自动获取 GitHub 用户名/仓库名，镜像名：ghcr.io/用户名/仓库名
+  IMAGE_NAME: ${{ github.repository }}
 
 permissions:
   contents: write
+  # 推送 ghcr.io 镜像必须的权限
+  packages: write
+  id-token: write
 
 jobs:
   build-and-push:
@@ -74,18 +78,19 @@ jobs:
       - name: 设置 Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: 登录 Docker Hub
+      - name: 登录 GHCR (GitHub Container Registry)
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          # 使用 GitHub 自带令牌，无需手动配置密钥
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 提取 Docker 镜像元数据
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=ref,event=branch
             type=ref,event=tag
