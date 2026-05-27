@@ -1,18 +1,18 @@
-import './assets/main.css'
+// src/main.js
 
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-
 import App from './App.vue'
 import router from './router'
-import { validateConfig } from './config'
+import { UnicomAPI } from './api/unicom'
 
 const app = createApp(App)
 
-// 验证配置完整性
-validateConfig()
+// 创建API实例并全局注册
+const unicomAPI = new UnicomAPI('/api')
+app.config.globalProperties.$unicom = unicomAPI
 
-app.use(createPinia())
+// 或者使用Vue3的inject/provide
+app.provide('unicomAPI', unicomAPI)
+
 app.use(router)
-
 app.mount('#app')
